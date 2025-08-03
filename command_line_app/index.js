@@ -24,6 +24,13 @@ const questions = [
     },
 ];
 
+const startRound = (roundNumber) => {
+    console.log("Round Number: ", roundNumber);
+    console.log("Here is your questions!");
+    const specificQuestion = questions[roundNumber];
+    console.log(specificQuestion.prompt);
+}
+
 const addPlayer = (player) => {
     gameState.players.push(player);
 }
@@ -46,8 +53,10 @@ const welcomePlayer = (player) => {
     console.log(`Welcome to our game, ${player}!`);
 }
 
+console.log(`Game Name: ${gameState.gameName}`);
+console.log(`Copyright Year: ${gameState.copyrightYear}`);
+
 welcomePlayer(playerOne);
 welcomePlayer(playerTwo);
 
-console.log(`Game Name: ${gameState.gameName}`);
-console.log(`Copyright Year: ${gameState.copyrightYear}`);
+startRound(0);
