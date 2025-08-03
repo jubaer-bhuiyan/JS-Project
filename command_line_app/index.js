@@ -7,7 +7,10 @@ const gameState = {
     gameName: "Our amazing guessing game",
     copyrightYear: 2025,
     players: [],
+    rounds: [], 
 }
+
+
 
 const questions = [
     {
@@ -29,6 +32,10 @@ const startRound = (roundNumber) => {
     console.log("Here is your questions!");
     const specificQuestion = questions[roundNumber];
     console.log(specificQuestion.prompt);
+    gameState.rounds.push({
+        guesses: [],
+        question: specificQuestion,
+    })
 }
 
 const addPlayer = (player) => {
@@ -60,3 +67,5 @@ welcomePlayer(playerOne);
 welcomePlayer(playerTwo);
 
 startRound(0);
+
+console.log(gameState.rounds);
