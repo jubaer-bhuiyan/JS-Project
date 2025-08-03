@@ -25,7 +25,7 @@ const questions = [
 ];
 
 const startRound = (roundNumber) => {
-    console.log("Round Number: ", roundNumber);
+    console.log(`\n--- Round ${roundNumber} ---`);
     console.log("Here is your questions!");
     const specificQuestion = questions[roundNumber];
     console.log(specificQuestion.prompt);
