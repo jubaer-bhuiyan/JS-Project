@@ -38,6 +38,12 @@ const startRound = (roundNumber) => {
     })
 }
 
+const makeGuess = (roundNumber, playerName, guess) => {
+    if (! gameState.rounds[roundNumber]) {
+        throw new Error("This function is not implemented yet");
+    }
+}
+
 const addPlayer = (player) => {
     gameState.players.push(player);
 }
@@ -67,5 +73,5 @@ welcomePlayer(playerOne);
 welcomePlayer(playerTwo);
 
 startRound(0);
-
-console.log(gameState.rounds);
+makeGuess(0, playerOne, 1969);
+makeGuess(0, playerTwo, 1978);
