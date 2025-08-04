@@ -81,4 +81,4 @@ startRound(0);
 makeGuess(0, playerOne, 1969);
 makeGuess(0, playerTwo, 1978);
 
-console.log(gameState.rounds[0])
+console.log(JSON.stringify(gameState, undefined, 2))
