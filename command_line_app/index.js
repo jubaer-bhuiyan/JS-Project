@@ -40,8 +40,13 @@ const startRound = (roundNumber) => {
 
 const makeGuess = (roundNumber, playerName, guess) => {
     if (! gameState.rounds[roundNumber]) {
-        throw new Error("This function is not implemented yet");
+        throw new Error("Dummy error: Round does not exist");
     }
+
+    gameState.rounds[roundNumber].guesses.push({
+        player: playerName,
+        guess: guess,
+    })
 }
 
 const addPlayer = (player) => {
@@ -75,3 +80,5 @@ welcomePlayer(playerTwo);
 startRound(0);
 makeGuess(0, playerOne, 1969);
 makeGuess(0, playerTwo, 1978);
+
+console.log(gameState.rounds[0])
