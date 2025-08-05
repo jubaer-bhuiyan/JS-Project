@@ -1,19 +1,12 @@
 const { gameState } = require("./gameState.js");
 const { startRound } = require("./startRound.js");
 const { makeGuess } = require("./makeGuess.js");
+const { addPlayer, removeLatestAddedPlayer } = require("./players.js");
 
 console.log("This is my First JS Project");
 
 const playerOne = "Jubaer";
 const playerTwo = "Junaed";
-
-const addPlayer = (player) => {
-    gameState.players.push(player);
-}
-
-const removeLatestAddedPlayer = () => {
-    return gameState.players.pop();
-}
 
 console.log("Current players in the game:", gameState.players);
 addPlayer(playerOne);
@@ -39,4 +32,4 @@ startRound(0);
 makeGuess(0, playerOne, 1969);
 makeGuess(0, playerTwo, 1978);
 
-console.log(JSON.stringify(gameState, undefined, 2))
+console.log(JSON.stringify(gameState, undefined, 2));
