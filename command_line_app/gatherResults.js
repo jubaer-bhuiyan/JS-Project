@@ -11,15 +11,14 @@ const gatherResults = (roundNumber) => {
         throw new Error(`The round with number ${roundNumber} had no gusses`)
     }
 
+    const results = {}
+
     for (let index = 0; index < round.guesses.length; index++) {
-        const element = round.guesses[index];
-        console.log(element)
-        
+        const guess = round.guesses[index];
+        results[guess.player] = 100;
     }
 
-    return {
-
-    }
+    return results
 }
 
 module.exports = {
