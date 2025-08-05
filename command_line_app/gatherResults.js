@@ -1,0 +1,21 @@
+const { gameState } = require("./gameState.js")
+
+const gatherResults = (roundNumber) => {
+    const round = gameState.rounds[roundNumber]
+
+    if (!round) {
+        throw new Error(`There was no such round with number ${roundNumber}`)
+    }
+
+    if (round.guesses.length === 0) {
+        throw new Error(`The round with number ${roundNumber} had no gusses`)
+    }
+
+    return {
+
+    }
+}
+
+module.exports = {
+    gatherResults,
+}

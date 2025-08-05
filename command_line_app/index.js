@@ -2,6 +2,7 @@ const { gameState } = require("./gameState.js");
 const { startRound } = require("./startRound.js");
 const { makeGuess } = require("./makeGuess.js");
 const { addPlayer, removeLatestAddedPlayer } = require("./players.js");
+const { gatherResults } = require("./gatherResults.js");
 
 console.log("This is my First JS Project");
 
@@ -31,5 +32,6 @@ welcomePlayer(playerTwo);
 startRound(0);
 makeGuess(0, playerOne, 1969);
 makeGuess(0, playerTwo, 1978);
-
 console.log(JSON.stringify(gameState, undefined, 2));
+const firstRoundResults = gatherResults(0);
+console.log(JSON.stringify(firstRoundResults, undefined, 2));
