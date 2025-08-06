@@ -20,10 +20,10 @@ const gatherResults = (roundNumber) => {
 
         let score = 1;
 
-        if (round.question.answer === guess.guess) {
+        if (round.question.answer <= round.question.correctAnswerOffset) {
             score = 10;
         }
-        else if (offFromSolution <= 5) {
+        else if (offFromSolution <= round.question.closestAnswerOffset) {
             score = 5;
         }
 
