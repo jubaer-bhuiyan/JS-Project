@@ -15,7 +15,10 @@ const gatherResults = (roundNumber) => {
 
     for (let index = 0; index < round.guesses.length; index++) {
         const guess = round.guesses[index];
-        results[guess.player] = 100;
+
+        const offFromSolution = Math.abs(round.question.answer - guess.guess);
+
+        results[guess.player] = offFromSolution;
     }
 
     return results
