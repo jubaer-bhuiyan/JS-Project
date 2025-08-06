@@ -20,7 +20,7 @@ const gatherResults = (roundNumber) => {
 
         let score = 1;
 
-        if (round.question.answer <= round.question.correctAnswerOffset) {
+        if (offFromSolution <= round.question.correctAnswerOffset) {
             score = 10;
         }
         else if (offFromSolution <= round.question.closestAnswerOffset) {
