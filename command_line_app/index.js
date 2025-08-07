@@ -22,6 +22,17 @@ const main = async () => {
         },
     ])
 
+    const gatherPlayerGuess = async (playerName) => {
+    const promptInput = await prompts([
+            {
+                type: 'number',
+                name: 'guess',
+                message: `What is your guess? ${playerName}`,
+            },
+        ])
+        return promptInput.guess;
+    }
+
     const playerOne = response.playerOne;
     const playerTwo = response.playerTwo;
 
@@ -46,20 +57,26 @@ const main = async () => {
     welcomePlayer(playerTwo);
 
     startRound(0);
-    makeGuess(0, playerOne, 1969);
-    makeGuess(0, playerTwo, 1978);
+    const playerOneRoundZeroGuess = await gatherPlayerGuess(playerOne);
+    const playerTwoRoundZeroGuess = await gatherPlayerGuess(playerTwo);
+    makeGuess(0, playerOne, playerOneRoundZeroGuess);
+    makeGuess(0, playerTwo, playerTwoRoundZeroGuess);
     const firstRoundResults = gatherResults(0);
     console.log(JSON.stringify(firstRoundResults, undefined, 2));
 
     startRound(1);
-    makeGuess(1, playerOne, 850);
-    makeGuess(1, playerTwo, 300);
+    const playerOneRoundOneGuess = await gatherPlayerGuess(playerOne);
+    const playerTwoRoundOneGuess = await gatherPlayerGuess(playerTwo);
+    makeGuess(1, playerOne, playerOneRoundOneGuess);
+    makeGuess(1, playerTwo, playerTwoRoundOneGuess);
     const secondRoundResults = gatherResults(1);
     console.log(JSON.stringify(secondRoundResults, undefined, 2));
 
     startRound(2);
-    makeGuess(2, playerOne, 600);
-    makeGuess(2, playerTwo, 800);
+    const playerOneRoundTwoGuess = await gatherPlayerGuess(playerOne);
+    const playerTwoRoundTwoGuess = await gatherPlayerGuess(playerTwo);
+    makeGuess(2, playerOne, playerOneRoundTwoGuess);
+    makeGuess(2, playerTwo, playerTwoRoundTwoGuess);
     const thirdRoundResults = gatherResults(2);
     console.log(JSON.stringify(thirdRoundResults, undefined, 2));
 
