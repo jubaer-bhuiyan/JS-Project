@@ -3,6 +3,7 @@ const { startRound } = require("./startRound.js");
 const { makeGuess } = require("./makeGuess.js");
 const { addPlayer, removeLatestAddedPlayer } = require("./players.js");
 const { gatherResults } = require("./gatherResults.js");
+const { caculateFinalResults } = require("./caculateFinalResults.js");
 
 console.log("This is my First JS Project");
 
@@ -32,20 +33,20 @@ welcomePlayer(playerTwo);
 startRound(0);
 makeGuess(0, playerOne, 1969);
 makeGuess(0, playerTwo, 1978);
-console.log(JSON.stringify(gameState, undefined, 2));
 const firstRoundResults = gatherResults(0);
 console.log(JSON.stringify(firstRoundResults, undefined, 2));
 
 startRound(1);
 makeGuess(1, playerOne, 850);
 makeGuess(1, playerTwo, 300);
-console.log(JSON.stringify(gameState, undefined, 2));
 const secondRoundResults = gatherResults(1);
 console.log(JSON.stringify(secondRoundResults, undefined, 2));
 
 startRound(2);
 makeGuess(2, playerOne, 600);
 makeGuess(2, playerTwo, 800);
-console.log(JSON.stringify(gameState, undefined, 2));
 const thirdRoundResults = gatherResults(2);
 console.log(JSON.stringify(thirdRoundResults, undefined, 2));
+
+const finalResults = caculateFinalResults();
+console.log(finalResults);
