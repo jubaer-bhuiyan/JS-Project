@@ -1,10 +1,9 @@
 import express from "express" 
+import { helloHandler } from "./handlers/hello.js"
 
 const app = express()
 
-app.get("/hello", (request, response) => {
-    response.status(404).send("Hello from our first app")
-})
+app.get("/hello", helloHandler)
 
 console.log("Launcing app on port 3331")
 app.listen(3331)
