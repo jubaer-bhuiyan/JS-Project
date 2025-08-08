@@ -57,7 +57,7 @@ const main = async () => {
     welcomePlayer(playerOne);
     welcomePlayer(playerTwo);
 
-    startRound(0);
+    await startRound(0);
     const playerOneRoundZeroGuess = await gatherPlayerGuess(playerOne);
     const playerTwoRoundZeroGuess = await gatherPlayerGuess(playerTwo);
     makeGuess(0, playerOne, playerOneRoundZeroGuess);
@@ -65,7 +65,7 @@ const main = async () => {
     const firstRoundResults = gatherResults(0);
     console.log("Round results", JSON.stringify(firstRoundResults, undefined, 2));
 
-    startRound(1);
+    await startRound(1);
     const playerOneRoundOneGuess = await gatherPlayerGuess(playerOne);
     const playerTwoRoundOneGuess = await gatherPlayerGuess(playerTwo);
     makeGuess(1, playerOne, playerOneRoundOneGuess);
@@ -73,7 +73,7 @@ const main = async () => {
     const secondRoundResults = gatherResults(1);
     console.log("Round results", JSON.stringify(secondRoundResults, undefined, 2));
 
-    startRound(2);
+    await startRound(2);
     const playerOneRoundTwoGuess = await gatherPlayerGuess(playerOne);
     const playerTwoRoundTwoGuess = await gatherPlayerGuess(playerTwo);
     makeGuess(2, playerOne, playerOneRoundTwoGuess);
@@ -85,12 +85,13 @@ const main = async () => {
     console.log("\nFinal results", finalResults);
 }
 
-// main();
+main();
 
-const anotherWrapper = async () => {
-    const questionsFromFiles = await readQuestions();
-    console.log("questionsFromFiles:", questionsFromFiles);
-}
+// const anotherWrapper = async () => {
+//     const questionsFromFiles = await readQuestions();
+//     console.log("questionsFromFiles:", questionsFromFiles);
+//     console.log("typeof questionsFromFiles:", typeof questionsFromFiles);
+// }
 
-anotherWrapper();
+// anotherWrapper();
 
