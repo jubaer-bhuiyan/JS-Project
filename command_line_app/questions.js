@@ -12,7 +12,7 @@ const questions = [
         closestAnswerOffset: 100,
     },
     {
-        prompt: "How many people did Arnold Schwarzenegger kill on screen in the Terminator franchise? (Data by jabhuiyan.com",
+        prompt: "How many people did Arnold Schwarzenegger kill on screen in the Terminator franchise? (Data by jabhuiyan.com)",
         answer: 895,
         correctAnswerOffset: 200,
         closestAnswerOffset: 500,
