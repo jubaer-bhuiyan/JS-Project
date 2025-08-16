@@ -17,7 +17,7 @@ export const addPlayerHandler = (request, response) => {
 
     if (playerWithSameName) {
         response.status(400).send({
-            message: `A player with the name "${request.body.name}" already exists`
+            message: `A player with the name "${request.body.name}"  already exists`
         })
         return
     }
